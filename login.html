@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión — RIFT OVERDRIVE</title>
+  <link rel="stylesheet" href="RIFT-OVERDRIVE.css">
+</head>
+<body>
+
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ===================== ENCABEZADO SIMPLIFICADO ===================== -->
+  <header class="header">
+    <a href="RIFT-OVERDRIVE.html">
+      <img src="img/logo.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="160" height="42">
+    </a>
+    <a href="RIFT-OVERDRIVE.html" class="boton boton-header">‹ Volver al inicio</a>
+  </header>
+
+  <main id="contenido-principal">
+
+  <!-- ===================== INICIO DE SESIÓN ===================== -->
+  <section class="seccion login-seccion">
+    <div class="login-caja">
+      <h1>Iniciar sesión</h1>
+      <p>Ingresá a tu cuenta para acceder a la Beta de RIFT OVERDRIVE.</p>
+
+      <form action="/login.php" method="post" class="formulario">
+
+        <div class="campo">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" placeholder="Tu contraseña"
+                 required minlength="6">
+        </div>
+
+        <div class="campo checkbox">
+          <input type="checkbox" id="recordar" name="recordar" value="si">
+          <label for="recordar">Recordarme en este dispositivo</label>
+        </div>
+
+        <div class="botones-form">
+          <button type="submit">Iniciar sesión</button>
+        </div>
+
+      </form>
+
+      <p class="login-alt">
+        ¿No tenés cuenta?
+        <a href="RIFT-OVERDRIVE.html#registro">Registrate para la Beta</a>
+      </p>
+    </div>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Iniciar sesión — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="footer">
+    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
+    <p><a href="terminos.html">Términos y Condiciones</a></p>
+  </footer>
+
+</body>
+</html>

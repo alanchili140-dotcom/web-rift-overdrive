@@ -1,0 +1,858 @@
+/* ===================== VARIABLES DE COLOR ===================== */
+:root {
+  --fondo: #08080f;
+  --fondo-seccion: #10101c;
+  --fondo-tarjeta: #14141f;
+  --violeta: #8a2be2;
+  --neon: #b026ff;
+  --neon-claro: #d67aff;
+  --azul: #2a8fff;
+  --texto: #eaeaf5;
+  --texto-suave: #9c9cb8;
+  --borde: #2a2a3d;
+}
+
+/* ===================== RESET BÁSICO ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--neon-claro);
+}
+
+a {
+  color: var(--neon-claro);
+  text-decoration: none;
+}
+
+/* ===================== ACCESIBILIDAD: SALTAR AL CONTENIDO ===================== */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  background-color: var(--neon);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ===================== ENCABEZADO ===================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: var(--fondo-seccion);
+  border-bottom: 1px solid var(--borde);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  height: 42px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav a {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon);
+}
+
+/* Menú desplegable de Descargar */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  overflow: hidden;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--fondo-seccion);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.boton-header {
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.boton-header:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+/* ===================== HERO / INICIO ===================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.hero-texto {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  max-width: 500px;
+}
+
+.titulo-juego {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  margin-bottom: 15px;
+}
+
+.titulo-juego .linea1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 4px;
+}
+
+.titulo-juego .linea2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--neon-claro);
+  letter-spacing: 6px;
+  text-shadow: 0 0 15px var(--neon);
+}
+
+.tagline {
+  color: var(--texto-suave);
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.hero-logo {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.boton-play {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--violeta);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.boton-play:hover {
+  box-shadow: 0 0 20px var(--neon);
+}
+
+/* ===================== HERO / CARRUSEL ESTILO STEAM ===================== */
+.hero-media {
+  position: relative;
+}
+
+.hero-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hero-flecha:hover {
+  background-color: var(--violeta);
+  box-shadow: 0 0 12px var(--neon);
+}
+
+.hero-flecha-izq {
+  left: 20px;
+}
+
+.hero-flecha-der {
+  right: 20px;
+}
+
+.hero-miniaturas {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.miniatura {
+  width: 70px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  transition: 0.2s;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
+  transition: 0.2s;
+}
+
+.miniatura:hover {
+  border-color: var(--neon-claro);
+}
+
+.miniatura:hover img {
+  filter: brightness(1);
+}
+
+.miniatura.activa {
+  border-color: var(--neon-claro);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+.miniatura.activa img {
+  filter: brightness(1);
+}
+
+/* ===================== BOTONES GENÉRICOS ===================== */
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--neon);
+  border-radius: 6px;
+  color: var(--texto);
+  font-weight: bold;
+  transition: 0.2s;
+  margin: 5px 8px 5px 0;
+}
+
+.boton:hover {
+  background-color: var(--neon);
+  color: #fff;
+  box-shadow: 0 0 15px var(--neon);
+}
+
+/* ===================== SECCIONES GENERALES ===================== */
+.seccion {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.seccion h2 {
+  margin-bottom: 20px;
+  border-left: 4px solid var(--neon);
+  padding-left: 12px;
+}
+
+.titulo-centrado {
+  text-align: center;
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* ===================== HISTORIA + DESCRIPCIÓN (2 COLUMNAS) ===================== */
+.dos-columnas {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.columna {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.img-columna {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* ===================== GALERÍA ===================== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+}
+
+/* ===================== REQUISITOS ===================== */
+.requisitos-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.req-columna {
+  flex: 1;
+  min-width: 260px;
+  max-width: 400px;
+  background-color: var(--fondo-tarjeta);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--borde);
+  border-top: 3px solid var(--azul);
+}
+
+.req-recomendados {
+  border-top-color: var(--violeta);
+}
+
+.req-columna h3 {
+  margin-bottom: 12px;
+}
+
+.req-minimos h3 { color: var(--azul); }
+.req-recomendados h3 { color: var(--neon-claro); }
+
+.req-columna ul {
+  list-style: none;
+}
+
+.req-columna li {
+  padding: 4px 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ===================== DESCARGA ===================== */
+.descarga-seccion {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.descarga-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.descarga-info p {
+  color: var(--texto-suave);
+  margin-bottom: 25px;
+}
+
+.botones-descarga-grande {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 320px;
+}
+
+.boton-descarga {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.boton-descarga.windows {
+  background-color: rgba(42, 143, 255, 0.15);
+  border: 1px solid var(--azul);
+}
+
+.boton-descarga.linux {
+  background-color: rgba(138, 43, 226, 0.15);
+  border: 1px solid var(--violeta);
+}
+
+.boton-descarga:hover {
+  filter: brightness(1.3);
+}
+
+.descarga-img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ===================== PASOS DE DESCARGA ===================== */
+.pasos-descarga {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 30px 20px;
+  background-color: var(--fondo-tarjeta);
+  border-radius: 10px;
+  border: 1px solid var(--borde);
+}
+
+.pasos-descarga h3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.pasos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 250px;
+}
+
+.paso-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--violeta);
+  color: #fff;
+  font-weight: bold;
+}
+
+.paso p {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+.flecha {
+  color: var(--texto-suave);
+  font-size: 1.5rem;
+}
+
+/* ===================== FORMULARIO (REGISTRO BETA) ===================== */
+.formulario {
+  max-width: 500px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: none;
+}
+
+.campo label,
+.campo legend {
+  font-weight: bold;
+  color: var(--texto-suave);
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="date"],
+.campo select,
+.campo textarea {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--texto);
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+}
+
+.campo input:invalid:not(:placeholder-shown) {
+  border-color: #ff4d6d;
+}
+
+.campo small {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+fieldset.campo label {
+  font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 15px;
+  color: var(--texto);
+}
+
+.campo.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.campo.checkbox label {
+  font-weight: normal;
+  color: var(--texto);
+}
+
+.botones-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.botones-form button {
+  padding: 12px 24px;
+  border: 2px solid var(--neon);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--texto);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botones-form button:hover {
+  background-color: var(--neon);
+  color: #fff;
+  box-shadow: 0 0 15px var(--neon);
+}
+
+.botones-form button[type="reset"] {
+  border-color: var(--texto-suave);
+}
+
+.botones-form button[type="reset"]:hover {
+  background-color: var(--texto-suave);
+  box-shadow: none;
+}
+
+/* ===================== FRANJA INTEGRANTES / ESTUDIO ===================== */
+.franja-integrantes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 25px 30px;
+  background-color: var(--fondo-seccion);
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+}
+
+.integrantes-titulo {
+  font-weight: bold;
+  color: var(--neon-claro);
+  min-width: 130px;
+}
+
+.integrantes-lista {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.integrante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.integrante img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--violeta);
+}
+
+.integrante p {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.integrante span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--texto-suave);
+}
+
+.estudio {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.estudio img {
+  height: 32px;
+}
+
+.redes {
+  display: flex;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+/* ===================== CONTROLES (PRE) ===================== */
+.controles {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-left: 3px solid var(--neon);
+  border-radius: 6px;
+  padding: 15px 20px;
+  color: var(--neon-claro);
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+code {
+  background-color: var(--fondo-tarjeta);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  color: var(--neon-claro);
+}
+
+/* ===================== CURSO ===================== */
+.modulo {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.modulo h3 {
+  border-left: none;
+  margin-bottom: 10px;
+}
+
+.modulo h4 {
+  color: var(--texto);
+  margin: 12px 0 4px;
+}
+
+.modulo h5 {
+  color: var(--texto-suave);
+  margin: 8px 0 4px;
+  font-size: 0.9rem;
+}
+
+.modulo p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ===================== BLOG ===================== */
+.entrada-blog {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.entrada-blog h3 {
+  border-left: none;
+  margin-bottom: 8px;
+}
+
+.comentarios {
+  margin-top: 25px;
+}
+
+.comentarios h4 {
+  color: var(--texto);
+  margin-bottom: 12px;
+}
+
+.comentario {
+  border-left: 3px solid var(--violeta);
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  background-color: var(--fondo-tarjeta);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.comentario strong {
+  color: var(--neon-claro);
+}
+
+/* ===================== PIE DE CADA SECCIÓN ===================== */
+.seccion hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin-top: 30px;
+}
+
+.footer-seccion {
+  text-align: right;
+  padding-top: 10px;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+/* ===================== LOGIN ===================== */
+.login-seccion {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.login-caja {
+  width: 100%;
+  max-width: 380px;
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 35px 30px;
+  text-align: center;
+}
+
+.login-caja h2 {
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.login-caja > p {
+  color: var(--texto-suave);
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+.login-caja .formulario {
+  text-align: left;
+  margin-top: 0;
+}
+
+.login-caja .botones-form {
+  justify-content: center;
+}
+
+.login-caja .botones-form button {
+  width: 100%;
+}
+
+.login-alt {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.volver-inicio {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+/* ===================== PIE DE PÁGINA ===================== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background-color: var(--fondo-seccion);
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ===================== ACCESIBILIDAD: H1 OCULTO VISUALMENTE ===================== */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

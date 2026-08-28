@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIFT OVERDRIVE</title>
+  <link rel="stylesheet" href="RIFT-OVERDRIVE.css">
+</head>
+<body>
+
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ===================== ENCABEZADO / LOGO + MENÚ ===================== -->
+  <header class="header">
+    <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="70" height="42">
+
+    <nav class="nav">
+      <a href="#tutorial">Tutorial</a>
+      <a href="#musica">Música</a>
+      <a href="#curso">Curso</a>
+      <a href="blog.html">Blog</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="preguntas.html">FAQ</a>
+      <a href="contacto.html">Contacto</a>
+
+      <div class="dropdown">
+        <a href="descarga.html">Descargar ▾</a>
+        <div class="dropdown-menu">
+          <a href="descargas/rift-overdrive-windows.zip" download>Windows</a>
+          <a href="descargas/rift-overdrive-linux.zip" download>Linux</a>
+        </div>
+      </div>
+    </nav>
+
+    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
+  </header>
+
+  <main id="contenido-principal">
+
+  <h1 class="visualmente-oculto">RIFT OVERDRIVE — FPS de acción con portales</h1>
+
+  <!-- ===================== INICIO / HERO (CARRUSEL ESTILO STEAM) ===================== -->
+  <section id="inicio" class="hero">
+
+    <div class="hero-media">
+      <button type="button" class="hero-flecha hero-flecha-izq" onclick="cambiarHero(-1)" aria-label="Imagen anterior">‹</button>
+
+      <img src="img/sala.png"
+           alt="Soldado enfrentando a un robot enemigo entre portales"
+           class="hero-img" id="hero-img-principal">
+
+      <button type="button" class="hero-flecha hero-flecha-der" onclick="cambiarHero(1)" aria-label="Imagen siguiente">›</button>
+    </div>
+
+    <div class="hero-texto">
+      <img src="img/logo-hero.png" alt="RIFT OVERDRIVE — Domina los portales. Sobrevive al experimento." class="hero-logo">
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="boton boton-play">
+        ▶ Ver trailer
+      </a>
+    </div>
+
+    <div class="hero-miniaturas">
+      <button type="button" class="miniatura activa" onclick="mostrarHero(0)" aria-label="Ver imagen 1">
+        <img src="img/batalla.jpg" alt="Escenario principal">
+      </button>
+      <button type="button" class="miniatura" onclick="mostrarHero(1)" aria-label="Ver imagen 2">
+        <img src="img/portal2.jpg" alt="Uso de portal">
+      </button>
+      <button type="button" class="miniatura" onclick="mostrarHero(2)" aria-label="Ver imagen 3">
+        <img src="img/enemigo.png" alt="Combate contra enemigo">
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== HISTORIA + DESCRIPCIÓN (2 COLUMNAS) ===================== -->
+  <section class="seccion dos-columnas">
+    <div class="columna" id="historia">
+      <h2>Historia</h2>
+      <img src="img/portal.jpg" alt="Silueta atravesando un portal en un pasillo oscuro" class="img-columna">
+      <p>
+        En un futuro donde la tecnología lo es todo, fuiste convertido en un
+        arma. Parte de un experimento secreto que busca crear al soldado
+        perfecto. Atrapado en una instalación de entrenamiento, deberás
+        superar pruebas cada vez más mortales mientras descubrís la verdad
+        detrás de RIFT OVERDRIVE.
+      </p>
+    </div>
+
+    <div class="columna" id="descripcion">
+      <h2>Descripción</h2>
+      <p>
+        RIFT OVERDRIVE es un FPS de acción rápida con mecánicas de portales,
+        combate dinámico y habilidades basadas en reflejos. Usá tu portal gun
+        para moverte, desviar ataques, atrapar enemigos y crear estrategias
+        devastadoras. Perfeccioná tu estilo, dominá el parry y enfrentate a
+        robots cada vez más letales.
+      </p>
+    </div>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Historia y Descripción — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== TUTORIAL ===================== -->
+  <section id="tutorial" class="seccion">
+    <h2>Tutorial</h2>
+    <p>
+      Antes de entrar en acción, memorizá estos controles básicos. La etiqueta
+      <code>&lt;pre&gt;</code> respeta los espacios y saltos de línea tal cual
+      los escribimos, por eso es ideal para mostrar una lista de controles
+      como si fuera un bloque de texto prolijo:
+    </p>
+    <pre class="controles">
+W A S D      Movimiento
+Mouse        Cámara
+Click Izq.   Disparar
+Click Der.   Abrir portal
+Shift        Dash
+Espacio      Salto
+R            Recargar
+    </pre>
+    <p>
+      Practicá primero el movimiento y la apertura de portales antes de
+      enfrentarte a los enemigos más difíciles.
+    </p>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Tutorial — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== MÚSICA (placeholder) ===================== -->
+  <section id="musica" class="seccion">
+    <h2>Música</h2>
+    <p>
+      Proximante se agregara la banda sonora del juego: nombre de los temas,
+      compositor, y un enlace a la playlist (Spotify/YouTube).
+    </p>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Musica — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== CURSO ===================== -->
+  <section id="curso" class="seccion">
+    <h2>Curso: Domina RIFT OVERDRIVE</h2>
+    <p>
+      Ofrecemos un curso online gratuito para que aprendas a exprimir al
+      máximo las mecánicas del juego. A continuación, la guía de estudio
+      completa, organizada con encabezados por módulo y subtema.
+    </p>
+
+    <article class="modulo">
+      <h3>Módulo 1: Movimiento y portales</h3>
+
+      <h4>1.1 Desplazamiento básico</h4>
+      <p>Manejo de cámara, salto y dash para moverte con fluidez por el mapa.</p>
+
+      <h4>1.2 Uso del portal gun</h4>
+      <p>Cómo abrir, cerrar y cruzar portales para generar atajos tácticos.</p>
+
+      <h5>1.2.1 Portales combinados</h5>
+      <p>Técnica avanzada para encadenar dos portales y ganar velocidad extra.</p>
+    </article>
+
+    <article class="modulo">
+      <h3>Módulo 2: Combate</h3>
+
+      <h4>2.1 Armas primarias</h4>
+      <p>Diferencias entre el rifle de plasma, la escopeta de pulso y el francotirador.</p>
+
+      <h4>2.2 Parry y esquive</h4>
+      <p>Cómo desviar ataques enemigos en el momento justo para contraatacar.</p>
+    </article>
+
+    <article class="modulo">
+      <h3>Módulo 3: Estrategias avanzadas</h3>
+
+      <h4>3.1 Combos con portales</h4>
+      <p>Uso de portales durante el combate para flanquear y sorprender.</p>
+
+      <h4>3.2 Gestión de recursos</h4>
+      <p>Administración de munición y habilidades especiales en partidas largas.</p>
+    </article>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Curso — RIFT OVERDRIVE Studio</p>
+    </footer>
+  </section>
+
+  <!-- ===================== BLOG ===================== -->
+  <section id="blog" class="seccion">
+    <h2>Blog</h2>
+    <p>Novedades, avances de desarrollo y notas del equipo.</p>
+
+    <article class="entrada-blog">
+      <h3>Devlog #1: Así funcionan los portales</h3>
+      <p>
+        Esta semana el equipo de programación terminó el sistema base de
+        portales.<br>
+        Todavía falta pulir las colisiones, pero ya se puede jugar el primer
+        nivel de prueba.
+      </p>
+    </article>
+
+    <article class="entrada-blog">
+      <h3>Devlog #2: Primeros bocetos de enemigos</h3>
+      <p>
+        El equipo de arte compartió los primeros diseños de los robots
+        enemigos.<br>
+        Se viene una actualización con capturas en la sección Galería.
+      </p>
+    </article>
+
+    <p><a href="blog.html">Ver todas las entradas del blog →</a></p>
+
+    <section class="comentarios">
+      <h4>Comentarios</h4>
+
+      <div class="comentario">
+        <p>
+          <strong>Jugador_23:</strong> ¡Se ve buenísimo el sistema de portales!<br>
+          Ansioso por probar la beta.
+        </p>
+      </div>
+
+      <div class="comentario">
+        <p>
+          <strong>FPS_fan:</strong> ¿Va a tener modo cooperativo?<br>
+          Sería genial poder jugarlo con amigos.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Blog — RIFT OVERDRIVE Studio</p>
+    </footer>
+  </section>
+
+  <!-- ===================== TRAILER ===================== -->
+  <section id="trailer" class="seccion">
+    <h2>Trailer</h2>
+    <p>Mirá el video de presentación del juego en YouTube:</p>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="boton">
+      Ver trailer en YouTube
+    </a>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Trailer — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== GALERÍA ===================== -->
+  <section id="galeria" class="seccion">
+    <h2>Galería</h2>
+    <div class="galeria">
+      <img src="img/portal.jpg" alt="Captura de pantalla: escenario principal">
+      <img src="img/batalla.jpg" alt="Captura de pantalla: uso de portal">
+      <img src="img/enemigo.png" alt="Captura de pantalla: combate contra enemigo">
+    </div>
+    <p><a href="galeria.html">Ver galería completa →</a></p>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Galeria — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== REQUISITOS ===================== -->
+  <section id="requisitos" class="seccion">
+    <h2 class="titulo-centrado">Requisitos</h2>
+
+    <div class="requisitos-grid">
+      <div class="req-columna req-minimos">
+        <h3>🖥️ Mínimos</h3>
+        <ul>
+          <li>SO: Windows 10 64 bit</li>
+          <li>Procesador: Intel i5-8400 / AMD Ryzen 3 3300X</li>
+          <li>Memoria: 8 GB RAM</li>
+          <li>Gráficos: GTX 1050 Ti / RX 560</li>
+          <li>Almacenamiento: 10 GB disponibles</li>
+        </ul>
+      </div>
+
+      <div class="req-columna req-recomendados">
+        <h3>🖥️ Recomendados</h3>
+        <ul>
+          <li>SO: Windows 10/11 64 bit</li>
+          <li>Procesador: Intel i7-9700K / AMD Ryzen 5 5600X</li>
+          <li>Memoria: 16 GB RAM</li>
+          <li>Gráficos: RTX 2060 / RX 6600 XT</li>
+          <li>Almacenamiento: 10 GB disponibles</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Requisitos — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== REGISTRO BETA (FORMULARIO) ===================== -->
+  <section id="registro" class="seccion">
+    <h2>Registrate para la Beta</h2>
+    <p>Completá tus datos para participar de la próxima prueba cerrada.</p>
+
+    <form action="/registrar-beta.php" method="post" class="formulario">
+
+      <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+               required minlength="3" maxlength="40">
+      </div>
+
+      <div class="campo">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+      </div>
+
+      <div class="campo">
+        <label for="nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="nacimiento" name="nacimiento" required max="2014-12-31">
+        <small>Debés tener 12 años o más.</small>
+      </div>
+
+      <div class="campo">
+        <label for="plataforma">Plataforma:</label>
+        <select id="plataforma" name="plataforma" required>
+          <option value="">-- Elegí una opción --</option>
+          <option value="pc">PC</option>
+          <option value="ps5">PlayStation 5</option>
+          <option value="xbox">Xbox Series X/S</option>
+        </select>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Modo de juego favorito:</legend>
+        <label><input type="radio" name="modo" value="campania" required> Campaña</label>
+        <label><input type="radio" name="modo" value="multijugador"> Multijugador</label>
+        <label><input type="radio" name="modo" value="ambos"> Ambos</label>
+      </fieldset>
+
+      <div class="campo">
+        <label for="codigo">Código de invitación (opcional):</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Ej: RIFT-1234"
+               pattern="RIFT-[0-9]{4}" title="Formato: RIFT-1234">
+      </div>
+
+      <div class="campo">
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50"
+                  placeholder="Contanos algo más sobre vos..."></textarea>
+      </div>
+
+      <div class="campo checkbox">
+        <input type="checkbox" id="newsletter" name="newsletter" value="si">
+        <label for="newsletter">Quiero recibir novedades por correo</label>
+      </div>
+
+      <input type="hidden" name="origen" value="sitio-web">
+
+      <div class="botones-form">
+        <button type="submit">Enviar registro</button>
+        <button type="reset">Borrar datos</button>
+      </div>
+
+    </form>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Registro — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  <!-- ===================== INTEGRANTES / FRANJA DE ESTUDIO ===================== -->
+  <section id="equipo" class="franja-integrantes">
+    <div class="integrantes-titulo">👥 Integrantes</div>
+
+    <div class="integrantes-lista">
+      <div class="integrante">
+        <img src="img/integrante1.jpg" alt="Foto de Facundo Mauricio Cruz Mendez">
+        <p>Facundo Mauricio<br>Cruz Mendez</p>
+        <span>Programador</span>
+      </div>
+      <div class="integrante">
+        <img src="img/integrante2.jpg" alt="Foto de Alan David Chiliguay">
+        <p>Alan David<br>Chiliguay</p>
+        <span>Programador</span>
+      </div>
+      <div class="integrante">
+        <img src="img/integrante3.jpg" alt="Foto de Joaquín Leonel Chocobar Torres">
+        <p>Joaquín Leonel<br>Chocobar Torres</p>
+        <span>Diseñador 3D</span>
+      </div>
+    </div>
+
+    <div class="estudio">
+      <img src="img/titulo del studio.png" alt="Logo de Rift Studio">
+      <div class="redes">
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+          <img src="img/discord.png" alt="Discord">
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="img/youtube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p>¿Tenés dudas o comentarios? Escribinos:</p>
+    <a href="mailto:riftoverdrive@example.com" class="boton">
+      riftoverdrive@example.com
+    </a>
+    <a href="tel:+543874123456" class="boton">
+      📞 +54 387 412-3456
+    </a>
+
+    <hr>
+    <footer class="footer-seccion">
+      <p>Contacto — RIFT OVERDRIVE</p>
+    </footer>
+  </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="footer">
+    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
+    <p><a href="terminos.html">Términos y Condiciones</a></p>
+  </footer>
+
+  <script src="RIFT-OVERDRIVE.js"></script>
+
+</body>
+</html>

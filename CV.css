@@ -1,0 +1,103 @@
+/* ===================== CV — ESTILOS ===================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  color: #222;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body > * {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+body > p:first-of-type {
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  border-bottom: 2px solid #4a4a8a;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+article {
+  margin-bottom: 16px;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: #2c2c54;
+  margin-bottom: 2px;
+}
+
+h4 {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+p {
+  margin: 4px 0;
+}
+
+ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+a {
+  color: #4a4a8a;
+}
+
+hr {
+  max-width: 700px;
+  margin: 30px auto 15px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+footer {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
