@@ -1,0 +1,7 @@
+# robots.txt para RIFT OVERDRIVE
+# Le indica a los robots de los buscadores qué pueden rastrear de este sitio
+
+User-agent: *
+Allow: /
+
+Sitemap: https://alanchili140-dotcom.github.io/web-rift-overdrive/sitemap.xml
