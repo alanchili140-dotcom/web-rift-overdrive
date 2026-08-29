@@ -29,9 +29,15 @@
     <p>Capturas de pantalla del desarrollo de RIFT OVERDRIVE.</p>
 
     <div class="galeria">
-      <img src="img/sala.png" alt="Captura de pantalla: escenario principal">
-      <img src="img/batalla.jpg" alt="Captura de pantalla: uso de portal">
-      <img src="img/enemigo.png" alt="Captura de pantalla: combate contra enemigo">
+      <button class="galeria-item" type="button">
+        <img src="img/sala.png" alt="Captura de pantalla: escenario principal">
+      </button>
+      <button class="galeria-item" type="button">
+        <img src="img/batalla.jpg" alt="Captura de pantalla: uso de portal">
+      </button>
+      <button class="galeria-item" type="button">
+        <img src="img/enemigo.png" alt="Captura de pantalla: combate contra enemigo">
+      </button>
     </div>
 
     <article class="modulo">
@@ -61,5 +67,14 @@
     <p><a href="terminos.html">Términos y Condiciones</a></p>
   </footer>
 
+  <!-- ===================== IMAGEN AMPLIADA (LIGHTBOX) ===================== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-cerrar" id="lightbox-cerrar" aria-label="Cerrar imagen ampliada">✕</button>
+    <button class="lightbox-flecha lightbox-flecha-izq" id="lightbox-anterior" aria-label="Imagen anterior">‹</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-img">
+    <button class="lightbox-flecha lightbox-flecha-der" id="lightbox-siguiente" aria-label="Imagen siguiente">›</button>
+  </div>
+
+  <script src="js/RIFT-OVERDRIVE.js"></script>
 </body>
 </html>

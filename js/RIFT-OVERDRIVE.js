@@ -191,3 +191,89 @@ botonesModulo.forEach(function (boton) {
     boton.setAttribute("aria-expanded", estaAbierto);
   });
 });
+
+// ===================== GALERÍA CON IMAGEN AMPLIADA (LIGHTBOX) =====================
+// Al hacer clic en una miniatura de la galería, se abre la imagen en grande.
+// Con las flechas se puede pasar a la imagen siguiente o anterior sin cerrar
+// la vista ampliada.
+
+const itemsGaleria = document.querySelectorAll(".galeria-item");
+const lightbox = document.getElementById("lightbox");
+
+if (itemsGaleria.length > 0 && lightbox) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  const botonCerrarLightbox = document.getElementById("lightbox-cerrar");
+  const botonAnteriorLightbox = document.getElementById("lightbox-anterior");
+  const botonSiguienteLightbox = document.getElementById("lightbox-siguiente");
+
+  // Armamos la lista de imágenes a partir de las miniaturas que ya están en el HTML
+  const imagenesGaleria = Array.from(itemsGaleria).map(function (item) {
+    const img = item.querySelector("img");
+    return { src: img.src, alt: img.alt };
+  });
+
+  let indiceLightboxActual = 0;
+
+  function mostrarImagenLightbox(indice) {
+    indiceLightboxActual = indice;
+    lightboxImg.src = imagenesGaleria[indice].src;
+    lightboxImg.alt = imagenesGaleria[indice].alt;
+  }
+
+  function abrirLightbox(indice) {
+    mostrarImagenLightbox(indice);
+    lightbox.classList.add("abierto");
+  }
+
+  function cerrarLightbox() {
+    lightbox.classList.remove("abierto");
+  }
+
+  function cambiarImagenLightbox(direccion) {
+    let nuevoIndice = indiceLightboxActual + direccion;
+
+    if (nuevoIndice < 0) {
+      nuevoIndice = imagenesGaleria.length - 1;
+    }
+    if (nuevoIndice >= imagenesGaleria.length) {
+      nuevoIndice = 0;
+    }
+
+    mostrarImagenLightbox(nuevoIndice);
+  }
+
+  itemsGaleria.forEach(function (item, indice) {
+    item.addEventListener("click", function () {
+      abrirLightbox(indice);
+    });
+  });
+
+  botonCerrarLightbox.addEventListener("click", cerrarLightbox);
+  botonAnteriorLightbox.addEventListener("click", function () {
+    cambiarImagenLightbox(-1);
+  });
+  botonSiguienteLightbox.addEventListener("click", function () {
+    cambiarImagenLightbox(1);
+  });
+
+  // Clic en el fondo oscuro (fuera de la imagen y las flechas) también cierra
+  lightbox.addEventListener("click", function (evento) {
+    if (evento.target === lightbox) {
+      cerrarLightbox();
+    }
+  });
+
+  // Navegación con teclado: flechas para moverse, Escape para cerrar
+  document.addEventListener("keydown", function (evento) {
+    if (!lightbox.classList.contains("abierto")) {
+      return;
+    }
+    if (evento.key === "Escape") {
+      cerrarLightbox();
+    } else if (evento.key === "ArrowRight") {
+      cambiarImagenLightbox(1);
+    } else if (evento.key === "ArrowLeft") {
+      cambiarImagenLightbox(-1);
+    }
+  });
+}
