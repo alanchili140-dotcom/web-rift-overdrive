@@ -1,8 +1,12 @@
-// ===================== VALIDACIÓN DEL FORMULARIO DE REGISTRO =====================
+// ===================== VALIDACIÓN Y RESUMEN DEL FORMULARIO DE REGISTRO =====================
+// Al enviar el formulario, primero se valida. Si está todo bien, en vez de
+// enviarlo directo se muestra un resumen de los datos para que el usuario
+// los confirme antes de que se envíen de verdad.
 
 console.log("✅ RIFT-OVERDRIVE.js (versión nueva) se cargó correctamente");
 
 const formRegistro = document.getElementById("form-registro");
+const resumenOverlay = document.getElementById("resumen-overlay");
 
 if (formRegistro) {
   console.log("✅ Formulario de registro encontrado, validación activa");
@@ -18,8 +22,62 @@ if (formRegistro) {
   // Solo letras (con acentos y ñ) y espacios — nada de números ni símbolos
   const patronSoloLetras = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
+  // Traduce el value de cada radio/select a un texto legible para el resumen
+  const textosPlataforma = {
+    pc: "PC",
+    ps5: "PlayStation 5",
+    xbox: "Xbox Series X/S",
+  };
+
+  const textosModo = {
+    campania: "Campaña",
+    multijugador: "Multijugador",
+    ambos: "Ambos",
+  };
+
+  let resumenLista, botonResumenConfirmar, botonResumenEditar;
+
+  if (resumenOverlay) {
+    resumenLista = document.getElementById("resumen-lista");
+    botonResumenConfirmar = document.getElementById("resumen-confirmar");
+    botonResumenEditar = document.getElementById("resumen-editar");
+  }
+
+  // Agrega un par término/valor al resumen. Si el dato está vacío, avisa que no se completó.
+  function agregarFilaResumen(etiqueta, valor) {
+    const dt = document.createElement("dt");
+    dt.textContent = etiqueta;
+
+    const dd = document.createElement("dd");
+    dd.textContent = valor && valor.trim() !== "" ? valor : "(no completado)";
+
+    resumenLista.appendChild(dt);
+    resumenLista.appendChild(dd);
+  }
+
+  function mostrarResumenRegistro() {
+    resumenLista.innerHTML = ""; // limpiamos el resumen anterior
+
+    const datos = new FormData(formRegistro);
+    const modoElegido = formRegistro.querySelector('input[name="modo"]:checked');
+
+    agregarFilaResumen("Nombre y Apellido", datos.get("nombre"));
+    agregarFilaResumen("Apodo", datos.get("apodo"));
+    agregarFilaResumen("Correo electrónico", datos.get("email"));
+    agregarFilaResumen("Fecha de nacimiento", datos.get("nacimiento"));
+    agregarFilaResumen("Plataforma", textosPlataforma[datos.get("plataforma")] || "");
+    agregarFilaResumen("Modo de juego favorito", modoElegido ? textosModo[modoElegido.value] : "");
+    agregarFilaResumen("Código de invitación", datos.get("codigo"));
+    agregarFilaResumen("Comentarios", datos.get("comentarios"));
+    agregarFilaResumen("Recibir novedades por correo", datos.get("newsletter") ? "Sí" : "No");
+
+    resumenOverlay.classList.add("abierto");
+  }
+
   formRegistro.addEventListener("submit", function (evento) {
     console.log("📋 Se intentó enviar el formulario, corriendo validación...");
+    evento.preventDefault(); // nunca enviamos directo: primero validamos y mostramos el resumen
+
     let esValido = true;
 
     // Limpiamos errores previos antes de revisar de nuevo
@@ -44,11 +102,39 @@ if (formRegistro) {
       esValido = false;
     }
 
-    // Si algo falló, cancelamos el envío del formulario
-    if (!esValido) {
-      evento.preventDefault();
+    // Si pasó la validación, mostramos el resumen en vez de enviar directo
+    if (esValido && resumenOverlay) {
+      mostrarResumenRegistro();
     }
   });
+
+  if (resumenOverlay) {
+    botonResumenEditar.addEventListener("click", function () {
+      resumenOverlay.classList.remove("abierto"); // vuelve al formulario, tal cual quedó cargado
+    });
+
+    botonResumenConfirmar.addEventListener("click", function () {
+      // Este sitio es un proyecto escolar sin servidor real, así que simulamos el envío.
+      // Con un backend real, acá iría: formRegistro.submit();
+      resumenOverlay.classList.remove("abierto");
+      alert("¡Listo! Tu registro para la Beta fue enviado.");
+      formRegistro.reset();
+    });
+
+    // Clic afuera de la caja de resumen también vuelve a editar
+    resumenOverlay.addEventListener("click", function (evento) {
+      if (evento.target === resumenOverlay) {
+        resumenOverlay.classList.remove("abierto");
+      }
+    });
+
+    // Escape también cierra el resumen y vuelve al formulario
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && resumenOverlay.classList.contains("abierto")) {
+        resumenOverlay.classList.remove("abierto");
+      }
+    });
+  }
 }
 
 // ===================== RELOJ EN TIEMPO REAL =====================
@@ -103,6 +189,29 @@ window.addEventListener("load", function () {
     alert("¡Bienvenido a RIFT OVERDRIVE! Prepárate para cruzar el portal...");
   }
 });
+
+// ===================== MODO CLARO (toggle de tema) =====================
+// Agrega o saca la clase "modo-claro" del <body>. Esa clase redefine las
+// variables de color (ver CSS), así que con solo esa clase cambia el sitio entero.
+// La elección se guarda en localStorage para que se mantenga al volver a entrar.
+
+const checkboxModoClaro = document.getElementById("toggle-modo-claro");
+const modoClaroActivado = localStorage.getItem("modoClaro") === "true";
+
+function aplicarModoClaro(activado) {
+  document.body.classList.toggle("modo-claro", activado);
+}
+
+aplicarModoClaro(modoClaroActivado); // se aplica apenas carga, con la preferencia guardada
+
+if (checkboxModoClaro) {
+  checkboxModoClaro.checked = modoClaroActivado;
+
+  checkboxModoClaro.addEventListener("change", function () {
+    aplicarModoClaro(checkboxModoClaro.checked);
+    localStorage.setItem("modoClaro", checkboxModoClaro.checked);
+  });
+}
 
 // ===================== CARRUSEL DEL HERO (estilo Steam) =====================
 // Cambia la imagen grande del hero al hacer clic en las flechas o en una miniatura.

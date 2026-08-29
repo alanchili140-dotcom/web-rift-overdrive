@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 body {
@@ -24,6 +25,20 @@ body {
   color: var(--texto);
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
+}
+
+/* ===================== MODO CLARO ===================== */
+/* Se activa agregando la clase "modo-claro" al <body> con JS.
+   Como casi todo el sitio usa var(--fondo), var(--texto), etc.,
+   con redefinir esas variables acá alcanza para repintar todo el sitio. */
+body.modo-claro {
+  --fondo: #f2f2f7;
+  --fondo-seccion: #ffffff;
+  --fondo-tarjeta: #eceaf7;
+  --neon-claro: #8a2be2;
+  --texto: #16161f;
+  --texto-suave: #45465c;
+  --borde: #d6d6e2;
 }
 
 /* ===================== FOCO VISIBLE AL NAVEGAR CON TAB ===================== */
@@ -458,6 +473,57 @@ a {
 
 .lightbox-flecha-der {
   right: 20px;
+}
+
+/* ===================== RESUMEN DEL FORMULARIO (antes de enviar) ===================== */
+.resumen-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 250;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.resumen-overlay.abierto {
+  display: flex;
+}
+
+.resumen-caja {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.resumen-aviso {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.resumen-lista {
+  margin: 20px 0;
+}
+
+.resumen-lista dt {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+}
+
+.resumen-lista dd {
+  color: var(--texto);
+  font-weight: bold;
+  margin-left: 0;
 }
 
 /* ===================== REQUISITOS ===================== */
@@ -1005,6 +1071,10 @@ code {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid var(--borde);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .reloj-tiempo {

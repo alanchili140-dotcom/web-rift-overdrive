@@ -346,6 +346,24 @@ R            Recargar
     </footer>
   </section>
 
+  <!-- ===================== RESUMEN DEL REGISTRO (antes de enviar) ===================== -->
+  <div class="resumen-overlay" id="resumen-overlay">
+    <div class="resumen-caja">
+      <h3>Confirmá tus datos</h3>
+      <p class="resumen-aviso">Revisá que esté todo bien antes de enviar el registro.</p>
+
+      <dl class="resumen-lista" id="resumen-lista">
+        <!-- Se completa con JS al validar el formulario -->
+      </dl>
+
+      <div class="botones-form">
+        <button type="button" id="resumen-confirmar" class="boton">Confirmar y enviar</button>
+        <button type="button" id="resumen-editar" class="boton">Volver a editar</button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ===================== INTEGRANTES / FRANJA DE ESTUDIO ===================== -->
   <section id="equipo" class="franja-integrantes">
     <div class="integrantes-titulo"><span aria-hidden="true">👥</span> Integrantes</div>
@@ -398,6 +416,10 @@ R            Recargar
       <label class="config-item">
         <input type="checkbox" id="toggle-bienvenida" checked>
         Mostrar mensaje de bienvenida al entrar
+      </label>
+      <label class="config-item">
+        <input type="checkbox" id="toggle-modo-claro">
+        Modo claro
       </label>
     </div>
   </footer>
