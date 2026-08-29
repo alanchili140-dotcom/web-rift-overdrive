@@ -115,8 +115,7 @@ a {
   background-color: var(--fondo-seccion);
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
+.dropdown-menu.abierto {
   display: block;
 }
 
@@ -749,6 +748,42 @@ code {
 .modulo p {
   color: var(--texto-suave);
   font-size: 0.9rem;
+}
+
+/* Acordeón: el título de cada módulo es un botón que muestra/oculta el contenido */
+.modulo-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modulo-icono {
+  font-size: 1.2rem;
+  color: var(--neon);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+.modulo.abierto .modulo-icono {
+  transform: rotate(45deg); /* el "+" gira y queda pareciendo una "x" */
+}
+
+.modulo-contenido {
+  display: none;
+}
+
+.modulo.abierto .modulo-contenido {
+  display: block;
+  margin-top: 10px;
 }
 
 /* ===================== BLOG ===================== */

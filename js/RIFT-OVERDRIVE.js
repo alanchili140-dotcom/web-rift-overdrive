@@ -141,3 +141,53 @@ function cambiarHero(direccion) {
 
   mostrarHero(nuevoIndice);
 }
+
+// ===================== MENÚ DESPLEGABLE "DESCARGAR" =====================
+// Antes se mostraba solo con CSS (:hover), pero eso falla en celular/tablet
+// (no hay "hover" al tocar la pantalla) y en escritorio se cerraba apenas
+// el mouse salía del link. Ahora se abre y cierra con clic.
+
+const botonDescargar = document.getElementById("btn-descargar");
+const menuDescargar = document.getElementById("menu-descargar");
+
+function cerrarMenuDescargar() {
+  menuDescargar.classList.remove("abierto");
+  botonDescargar.setAttribute("aria-expanded", "false");
+}
+
+if (botonDescargar && menuDescargar) {
+  botonDescargar.addEventListener("click", function (evento) {
+    evento.preventDefault(); // no navegamos a descarga.html, solo abrimos el menú
+    const estaAbierto = menuDescargar.classList.toggle("abierto");
+    botonDescargar.setAttribute("aria-expanded", estaAbierto);
+  });
+
+  // Si el usuario hace clic afuera del menú, lo cerramos
+  document.addEventListener("click", function (evento) {
+    const clickFueraDelDropdown = !evento.target.closest(".dropdown");
+    if (clickFueraDelDropdown) {
+      cerrarMenuDescargar();
+    }
+  });
+
+  // Con la tecla Escape también se cierra, por accesibilidad
+  document.addEventListener("keydown", function (evento) {
+    if (evento.key === "Escape") {
+      cerrarMenuDescargar();
+    }
+  });
+}
+
+// ===================== ACORDEÓN DEL CURSO (Módulo 1, 2, 3) =====================
+// Cada módulo empieza cerrado. Al hacer clic en su título se muestra u
+// oculta el contenido de ESE módulo, sin afectar a los demás.
+
+const botonesModulo = document.querySelectorAll(".modulo-titulo");
+
+botonesModulo.forEach(function (boton) {
+  boton.addEventListener("click", function () {
+    const modulo = boton.closest(".modulo");
+    const estaAbierto = modulo.classList.toggle("abierto");
+    boton.setAttribute("aria-expanded", estaAbierto);
+  });
+});

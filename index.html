@@ -26,8 +26,8 @@
       <a href="contacto.html">Contacto</a>
 
       <div class="dropdown">
-        <a href="descarga.html">Descargar ▾</a>
-        <div class="dropdown-menu">
+        <a href="descarga.html" id="btn-descargar" aria-expanded="false" aria-controls="menu-descargar">Descargar ▾</a>
+        <div class="dropdown-menu" id="menu-descargar">
           <a href="descargas/rift-overdrive-windows.zip" download>Windows</a>
           <a href="descargas/rift-overdrive-linux.zip" download>Linux</a>
         </div>
@@ -161,36 +161,54 @@ R            Recargar
     </p>
 
     <article class="modulo">
-      <h3>Módulo 1: Movimiento y portales</h3>
+      <h3>
+        <button class="modulo-titulo" aria-expanded="false">
+          Módulo 1: Movimiento y portales
+          <span class="modulo-icono" aria-hidden="true">+</span>
+        </button>
+      </h3>
+      <div class="modulo-contenido">
+        <h4>1.1 Desplazamiento básico</h4>
+        <p>Manejo de cámara, salto y dash para moverte con fluidez por el mapa.</p>
 
-      <h4>1.1 Desplazamiento básico</h4>
-      <p>Manejo de cámara, salto y dash para moverte con fluidez por el mapa.</p>
+        <h4>1.2 Uso del portal gun</h4>
+        <p>Cómo abrir, cerrar y cruzar portales para generar atajos tácticos.</p>
 
-      <h4>1.2 Uso del portal gun</h4>
-      <p>Cómo abrir, cerrar y cruzar portales para generar atajos tácticos.</p>
-
-      <h5>1.2.1 Portales combinados</h5>
-      <p>Técnica avanzada para encadenar dos portales y ganar velocidad extra.</p>
+        <h5>1.2.1 Portales combinados</h5>
+        <p>Técnica avanzada para encadenar dos portales y ganar velocidad extra.</p>
+      </div>
     </article>
 
     <article class="modulo">
-      <h3>Módulo 2: Combate</h3>
+      <h3>
+        <button class="modulo-titulo" aria-expanded="false">
+          Módulo 2: Combate
+          <span class="modulo-icono" aria-hidden="true">+</span>
+        </button>
+      </h3>
+      <div class="modulo-contenido">
+        <h4>2.1 Armas primarias</h4>
+        <p>Diferencias entre el rifle de plasma, la escopeta de pulso y el francotirador.</p>
 
-      <h4>2.1 Armas primarias</h4>
-      <p>Diferencias entre el rifle de plasma, la escopeta de pulso y el francotirador.</p>
-
-      <h4>2.2 Parry y esquive</h4>
-      <p>Cómo desviar ataques enemigos en el momento justo para contraatacar.</p>
+        <h4>2.2 Parry y esquive</h4>
+        <p>Cómo desviar ataques enemigos en el momento justo para contraatacar.</p>
+      </div>
     </article>
 
     <article class="modulo">
-      <h3>Módulo 3: Estrategias avanzadas</h3>
+      <h3>
+        <button class="modulo-titulo" aria-expanded="false">
+          Módulo 3: Estrategias avanzadas
+          <span class="modulo-icono" aria-hidden="true">+</span>
+        </button>
+      </h3>
+      <div class="modulo-contenido">
+        <h4>3.1 Combos con portales</h4>
+        <p>Uso de portales durante el combate para flanquear y sorprender.</p>
 
-      <h4>3.1 Combos con portales</h4>
-      <p>Uso de portales durante el combate para flanquear y sorprender.</p>
-
-      <h4>3.2 Gestión de recursos</h4>
-      <p>Administración de munición y habilidades especiales en partidas largas.</p>
+        <h4>3.2 Gestión de recursos</h4>
+        <p>Administración de munición y habilidades especiales en partidas largas.</p>
+      </div>
     </article>
 
     <hr>
