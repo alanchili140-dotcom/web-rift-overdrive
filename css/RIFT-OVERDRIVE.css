@@ -871,6 +871,13 @@ code {
   border-top: 1px solid var(--borde);
 }
 
+.reloj-tiempo {
+  color: var(--neon-claro);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
 .config-item {
   display: inline-flex;
   align-items: center;

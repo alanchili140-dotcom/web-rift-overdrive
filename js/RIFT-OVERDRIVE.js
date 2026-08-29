@@ -51,6 +51,32 @@ if (formRegistro) {
   });
 }
 
+// ===================== RELOJ EN TIEMPO REAL =====================
+
+const elementoReloj = document.getElementById("reloj");
+
+function actualizarReloj() {
+  const ahora = new Date(); // objeto Date con la fecha y hora actuales del dispositivo
+
+  const opciones = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+
+  // toLocaleString formatea la fecha en español, con el formato que definimos arriba
+  elementoReloj.textContent = ahora.toLocaleString("es-AR", opciones);
+}
+
+if (elementoReloj) {
+  actualizarReloj(); // lo mostramos apenas carga, sin esperar el primer segundo
+  setInterval(actualizarReloj, 1000); // y lo repetimos cada 1000 ms = 1 segundo
+}
+
 // ===================== MENSAJE DE BIENVENIDA (con interruptor) =====================
 // El usuario puede apagar este mensaje con el checkbox del pie de página.
 // Usamos localStorage para recordar su elección aunque cierre el navegador.
