@@ -253,17 +253,19 @@ R            Recargar
     <h2>Registrate para la Beta</h2>
     <p>Completá tus datos para participar de la próxima prueba cerrada.</p>
 
-    <form action="/registrar-beta.php" method="post" class="formulario">
+    <form action="/registrar-beta.php" method="post" class="formulario" id="form-registro" novalidate>
 
       <div class="campo">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
                required minlength="3" maxlength="40">
+        <span class="error-campo" id="error-nombre"></span>
       </div>
 
       <div class="campo">
         <label for="email">Correo electrónico:</label>
         <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        <span class="error-campo" id="error-email"></span>
       </div>
 
       <div class="campo">
@@ -367,6 +369,13 @@ R            Recargar
   <footer class="footer">
     <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
     <p><a href="terminos.html">Términos y Condiciones</a></p>
+
+    <div class="config-sitio">
+      <label class="config-item">
+        <input type="checkbox" id="toggle-bienvenida" checked>
+        Mostrar mensaje de bienvenida al entrar
+      </label>
+    </div>
   </footer>
 
   <script src="js/RIFT-OVERDRIVE.js"></script>

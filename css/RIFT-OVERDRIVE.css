@@ -53,24 +53,6 @@ a {
   top: 10px;
 }
 
-/* ===================== ACCESIBILIDAD: FOCO VISIBLE AL NAVEGAR CON TECLADO ===================== */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--neon-claro);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* ===================== SELECTOR POR ID: margen al saltar desde el menú ===================== */
-#tutorial,
-#musica,
-#curso {
-  scroll-margin-top: 20px;
-}
-
 /* ===================== ENCABEZADO ===================== */
 .header {
   display: flex;
@@ -581,6 +563,12 @@ textarea:focus-visible {
   font-size: 0.8rem;
 }
 
+.error-campo {
+  color: #ff4d6d;
+  font-size: 0.8rem;
+  min-height: 1em;
+}
+
 fieldset.campo label {
   font-weight: normal;
   display: inline-flex;
@@ -875,6 +863,28 @@ code {
   background-color: var(--fondo-seccion);
   color: var(--texto-suave);
   font-size: 0.9rem;
+}
+
+.config-sitio {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--borde);
+}
+
+.config-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+
+.config-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--neon);
+  cursor: pointer;
 }
 
 /* ===================== ACCESIBILIDAD: H1 OCULTO VISUALMENTE ===================== */
