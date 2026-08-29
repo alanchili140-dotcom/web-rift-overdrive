@@ -256,10 +256,15 @@ R            Recargar
     <form action="/registrar-beta.php" method="post" class="formulario" id="form-registro" novalidate>
 
       <div class="campo">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Alan Chiliguay"
                required minlength="3" maxlength="40">
         <span class="error-campo" id="error-nombre"></span>
+      </div>
+
+      <div class="campo">
+        <label for="apodo">Apodo (opcional):</label>
+        <input type="text" id="apodo" name="apodo" placeholder="¿Cómo te dicen tus amigos?" maxlength="20">
       </div>
 
       <div class="campo">

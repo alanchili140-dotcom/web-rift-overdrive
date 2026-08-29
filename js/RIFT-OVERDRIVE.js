@@ -1,8 +1,12 @@
 // ===================== VALIDACIÓN DEL FORMULARIO DE REGISTRO =====================
 
+console.log("✅ RIFT-OVERDRIVE.js (versión nueva) se cargó correctamente");
+
 const formRegistro = document.getElementById("form-registro");
 
 if (formRegistro) {
+  console.log("✅ Formulario de registro encontrado, validación activa");
+
   const campoNombre = document.getElementById("nombre");
   const campoEmail = document.getElementById("email");
   const errorNombre = document.getElementById("error-nombre");
@@ -11,7 +15,11 @@ if (formRegistro) {
   // Expresión regular simple para validar formato de email: algo@algo.algo
   const patronEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // Solo letras (con acentos y ñ) y espacios — nada de números ni símbolos
+  const patronSoloLetras = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+
   formRegistro.addEventListener("submit", function (evento) {
+    console.log("📋 Se intentó enviar el formulario, corriendo validación...");
     let esValido = true;
 
     // Limpiamos errores previos antes de revisar de nuevo
@@ -21,6 +29,9 @@ if (formRegistro) {
     // --- Validar que el nombre no esté vacío ---
     if (campoNombre.value.trim() === "") {
       errorNombre.textContent = "Por favor, ingresá tu nombre.";
+      esValido = false;
+    } else if (!patronSoloLetras.test(campoNombre.value.trim())) {
+      errorNombre.textContent = "El nombre solo puede contener letras (nada de números o símbolos).";
       esValido = false;
     }
 
