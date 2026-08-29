@@ -1,3 +1,11 @@
+// ===================== MENSAJE DE BIENVENIDA =====================
+// Se ejecuta una vez que la página terminó de cargar por completo
+// (incluidas las imágenes), y muestra un saludo con alert().
+
+window.addEventListener("load", function () {
+  alert("¡Bienvenido a RIFT OVERDRIVE! Prepárate para cruzar el portal...");
+});
+
 // ===================== CARRUSEL DEL HERO (estilo Steam) =====================
 // Cambia la imagen grande del hero al hacer clic en las flechas o en una miniatura.
 
