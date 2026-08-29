@@ -665,6 +665,18 @@ fieldset.campo label {
   color: var(--texto-suave);
 }
 
+.link-cv {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--neon-claro);
+  text-decoration: underline;
+  margin-top: 2px;
+}
+
+.link-cv:hover {
+  color: var(--violeta);
+}
+
 .estudio {
   display: flex;
   align-items: center;
