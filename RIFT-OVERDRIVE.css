@@ -53,6 +53,24 @@ a {
   top: 10px;
 }
 
+/* ===================== ACCESIBILIDAD: FOCO VISIBLE AL NAVEGAR CON TECLADO ===================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--neon-claro);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ===================== SELECTOR POR ID: margen al saltar desde el menú ===================== */
+#tutorial,
+#musica,
+#curso {
+  scroll-margin-top: 20px;
+}
+
 /* ===================== ENCABEZADO ===================== */
 .header {
   display: flex;
