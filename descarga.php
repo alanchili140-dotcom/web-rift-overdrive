@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descargar Juego FPS para PC — RIFT OVERDRIVE</title>
-  <meta name="description" content="Descarga gratis RIFT OVERDRIVE, el FPS futurista con portales. Disponible para Windows y Linux.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- ===================== ENCABEZADO SIMPLIFICADO (solo logo + un botón) ===================== -->
-  <header class="header">
-    <a href="index.html">
-      <img src="img/logo-hero.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="120" height="60">
-    </a>
-    <a href="#descarga" class="boton boton-header">⬇ Windows o Linux</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Descargar Juego FPS para PC — RIFT OVERDRIVE';
+$descripcion_pagina = 'Descarga gratis RIFT OVERDRIVE, el FPS futurista con portales. Disponible para Windows y Linux.';
+$nav_simple = true;
+$nav_boton_texto = '⬇ Windows o Linux';
+$nav_boton_link = '#descarga';
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
 
   <!-- ===================== DESCARGA ===================== -->
@@ -70,7 +58,7 @@
   </div>
 
   <p class="volver-inicio">
-    <a href="index.html" class="boton">‹ Volver al inicio</a>
+    <a href="index.php" class="boton">‹ Volver al inicio</a>
   </p>
 
   <hr>
@@ -80,12 +68,4 @@
 
   </main>
 
-  <!-- ===================== PIE DE PÁGINA ===================== -->
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>

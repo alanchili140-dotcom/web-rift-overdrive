@@ -98,7 +98,8 @@ a {
 .nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 12px 25px;
 }
 
 .nav a {
@@ -111,6 +112,14 @@ a {
 .nav a:hover {
   color: #fff;
   text-shadow: 0 0 10px var(--neon);
+}
+
+/* Link de la página actual (lo marca PHP con class="active" en includes/nav.php) */
+.nav a.active {
+  color: var(--neon-claro);
+  text-shadow: 0 0 10px var(--neon);
+  border-bottom: 2px solid var(--neon);
+  padding-bottom: 2px;
 }
 
 /* Menú desplegable de Descargar */

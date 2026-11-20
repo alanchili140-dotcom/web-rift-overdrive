@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preguntas Frecuentes del Juego FPS — RIFT OVERDRIVE</title>
-  <meta name="description" content="Respondemos las dudas mas comunes sobre RIFT OVERDRIVE: genero, plataformas, portales y como reportar errores.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <header class="header">
-    <img src="img/logo-hero.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="160" height="42">
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="descarga.html">Descargar</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Preguntas Frecuentes del Juego FPS — RIFT OVERDRIVE';
+$descripcion_pagina = 'Respondemos las dudas mas comunes sobre RIFT OVERDRIVE: genero, plataformas, portales y como reportar errores.';
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
   <section class="seccion">
     <h1>Preguntas Frecuentes sobre el FPS de Portales</h1>
@@ -56,7 +38,7 @@ Gráficos:  GTX 1050 Ti / RX 560
       <img src="img/error-de-bug.png" alt="Ejemplo de captura de pantalla para reportar un error" width="300">
       <p>
         Escribinos por correo a
-        <a href="mailto:riftoverdrive@example.com">riftoverdrive@example.com</a>
+        <a href="mailto:<?= APP_EMAIL ?>"><?= APP_EMAIL ?></a>
         o llamanos al <a href="tel:+543874123456">+54 387 412-3456</a>,
         contándonos qué pasó y, si podés, adjuntá una captura de pantalla
         como la de arriba.
@@ -70,11 +52,4 @@ Gráficos:  GTX 1050 Ti / RX 560
   </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>

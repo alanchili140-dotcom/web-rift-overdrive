@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión — RIFT OVERDRIVE</title>
-  <meta name="description" content="Inicia sesion para acceder a la Beta cerrada de RIFT OVERDRIVE.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- ===================== ENCABEZADO SIMPLIFICADO ===================== -->
-  <header class="header">
-    <a href="index.html">
-      <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="160" height="42">
-    </a>
-    <a href="index.html" class="boton boton-header">‹ Volver al inicio</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Iniciar sesión — RIFT OVERDRIVE';
+$descripcion_pagina = 'Inicia sesion para acceder a la Beta cerrada de RIFT OVERDRIVE.';
+$nav_simple = true;
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
 
   <!-- ===================== INICIO DE SESIÓN ===================== -->
@@ -53,7 +39,7 @@
 
       <p class="login-alt">
         ¿No tenés cuenta?
-        <a href="index.html#registro">Registrate para la Beta</a>
+        <a href="index.php#registro">Registrate para la Beta</a>
       </p>
     </div>
 
@@ -65,12 +51,4 @@
 
   </main>
 
-  <!-- ===================== PIE DE PÁGINA ===================== -->
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>

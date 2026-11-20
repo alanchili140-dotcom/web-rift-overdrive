@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería de Capturas FPS — RIFT OVERDRIVE</title>
-  <meta name="description" content="Mira capturas de pantalla del gameplay, los portales y los enemigos de RIFT OVERDRIVE.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <header class="header">
-    <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="70" height="42">
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="descarga.html">Descargar</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="preguntas.html">FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Galería de Capturas FPS — RIFT OVERDRIVE';
+$descripcion_pagina = 'Mira capturas de pantalla del gameplay, los portales y los enemigos de RIFT OVERDRIVE.';
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
   <section class="seccion">
     <h1>Galería de Capturas del FPS</h1>
@@ -62,11 +43,6 @@
   </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-  </footer>
-
   <!-- ===================== IMAGEN AMPLIADA (LIGHTBOX) ===================== -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-cerrar" id="lightbox-cerrar" aria-label="Cerrar imagen ampliada">✕</button>
@@ -75,6 +51,4 @@
     <button class="lightbox-flecha lightbox-flecha-der" id="lightbox-siguiente" aria-label="Imagen siguiente">›</button>
   </div>
 
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>

@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devlog y Novedades del Desarrollo — RIFT OVERDRIVE</title>
-  <meta name="description" content="Seguí las novedades y avances del desarrollo de RIFT OVERDRIVE, semana a semana.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <header class="header">
-    <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="70" height="42">
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="descarga.html">Descargar</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="preguntas.html">FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Devlog y Novedades del Desarrollo — RIFT OVERDRIVE';
+$descripcion_pagina = 'Seguí las novedades y avances del desarrollo de RIFT OVERDRIVE, semana a semana.';
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
   <section class="seccion">
     <h1>Blog de Desarrollo del Videojuego</h1>
@@ -44,14 +25,14 @@
         El equipo de arte compartió los primeros diseños de los robots
         enemigos.<br>
         Se viene una actualización con capturas en la sección
-        <a href="galeria.html">Galería</a>.
+        <a href="galeria.php">Galería</a>.
       </p>
     </article>
 
     <article class="entrada-blog">
       <h2>Devlog #3: Rumbo a la Beta cerrada</h2>
       <p>
-        Ya está abierto el <a href="index.html#registro">registro
+        Ya está abierto el <a href="index.php#registro">registro
         para la Beta</a>.<br>
         Gracias a todos los que se anotaron durante la primera semana.
       </p>
@@ -90,11 +71,4 @@
   </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
