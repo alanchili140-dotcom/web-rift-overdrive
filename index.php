@@ -1,42 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIFT OVERDRIVE — Juego FPS de portales futurista para PC</title>
-  <meta name="description" content="RIFT OVERDRIVE es un videojuego FPS futurista con portales y combate rapido. Descarga la beta para Windows y Linux, mira el trailer y conoce la historia.">
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- ===================== ENCABEZADO / LOGO + MENÚ ===================== -->
-  <header class="header">
-    <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="70" height="42">
-
-    <nav class="nav">
-      <a href="#tutorial">Tutorial</a>
-      <a href="#musica">Música</a>
-      <a href="#curso">Curso</a>
-      <a href="blog.html">Blog</a>
-      <a href="galeria.html">Galería</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="preguntas.html">FAQ</a>
-      <a href="contacto.html">Contacto</a>
-
-      <div class="dropdown">
-        <a href="descarga.html" id="btn-descargar" aria-expanded="false" aria-controls="menu-descargar">Descargar ▾</a>
-        <div class="dropdown-menu" id="menu-descargar">
-          <a href="descargas/rift-overdrive-windows.zip" download>Windows</a>
-          <a href="descargas/rift-overdrive-linux.zip" download>Linux</a>
-        </div>
-      </div>
-    </nav>
-
-    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
-  </header>
-
+<?php
+$titulo_pagina = 'RIFT OVERDRIVE — Juego FPS de portales futurista para PC';
+$descripcion_pagina = 'RIFT OVERDRIVE es un videojuego FPS futurista con portales y combate rapido. Descarga la beta para Windows y Linux, mira el trailer y conoce la historia.';
+$mostrar_config = true;
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
 
   <h1 class="visualmente-oculto">RIFT OVERDRIVE — FPS de acción con portales</h1>
@@ -378,7 +346,7 @@ R            Recargar
         <img src="img/integrante2.jpg" alt="Foto de Alan David Chiliguay">
         <p>Alan David<br>Chiliguay</p>
         <span>Programador</span>
-        <a href="CV.html" class="link-cv">Ver CV</a>
+        <a href="CV.php" class="link-cv">Ver CV</a>
       </div>
       <div class="integrante">
         <img src="img/integrante3.jpg" alt="Foto de Joaquín Leonel Chocobar Torres">
@@ -406,25 +374,4 @@ R            Recargar
 
   </main>
 
-  <!-- ===================== PIE DE PÁGINA ===================== -->
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.html">Términos y Condiciones</a></p>
-    <p id="reloj" class="reloj-tiempo"></p>
-
-    <div class="config-sitio">
-      <label class="config-item">
-        <input type="checkbox" id="toggle-bienvenida" checked>
-        Mostrar mensaje de bienvenida al entrar
-      </label>
-      <label class="config-item">
-        <input type="checkbox" id="toggle-modo-claro">
-        Modo claro
-      </label>
-    </div>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>

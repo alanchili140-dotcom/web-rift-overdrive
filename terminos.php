@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos y Condiciones — RIFT OVERDRIVE</title>
-  <link rel="stylesheet" href="css/RIFT-OVERDRIVE.css">
-</head>
-<body>
-
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-  <header class="header">
-    <img src="img/logo-header.png" alt="Logo de RIFT OVERDRIVE" class="logo" width="70" height="42">
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="descarga.html">Descargar</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="preguntas.html">FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <a href="login.html" class="boton boton-header">⬇ Iniciar sesión</a>
-  </header>
-
+<?php
+$titulo_pagina = 'Términos y Condiciones — RIFT OVERDRIVE';
+require_once 'includes/header.php';
+require_once 'includes/nav.php';
+?>
   <main id="contenido-principal">
 
   <!-- ===================== TÉRMINOS Y CONDICIONES ===================== -->
@@ -64,7 +45,7 @@
       <h2>Contacto</h2>
       <p>
         Ante cualquier consulta sobre estos términos, podés escribirnos
-        desde la <a href="contacto.html">página de contacto</a>.
+        desde la <a href="contacto.php">página de contacto</a>.
       </p>
     </article>
 
@@ -75,10 +56,4 @@
   </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 RIFT OVERDRIVE — Proyecto escolar, Escuela Técnica.</p>
-  </footer>
-
-  <script src="js/RIFT-OVERDRIVE.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
