@@ -1,0 +1,8 @@
+# Variables de entorno (datos propios de cada entorno, no se suben)
+.env
+.env.local
+
+# Archivos del sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
