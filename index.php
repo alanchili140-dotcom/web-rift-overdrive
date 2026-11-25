@@ -80,10 +80,7 @@ require_once 'includes/nav.php';
   <section id="tutorial" class="seccion">
     <h2>Tutorial</h2>
     <p>
-      Antes de entrar en acción, memorizá estos controles básicos. La etiqueta
-      <code>&lt;pre&gt;</code> respeta los espacios y saltos de línea tal cual
-      los escribimos, por eso es ideal para mostrar una lista de controles
-      como si fuera un bloque de texto prolijo:
+      Antes de entrar en acción, memorizá estos controles básicos.
     </p>
     <pre class="controles">
 W A S D      Movimiento
