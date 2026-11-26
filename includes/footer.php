@@ -6,11 +6,12 @@
  * el reloj y los interruptores de bienvenida / modo claro.
  */
 $mostrar_config = $mostrar_config ?? false;
+$ruta_base = $ruta_base ?? '';
 ?>
 
   <footer class="footer">
     <p>&copy; <?= date('Y') ?> <?= htmlspecialchars(APP_NAME) ?> — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="terminos.php">Términos y Condiciones</a></p>
+    <p><a href="<?= $ruta_base ?>terminos.php">Términos y Condiciones</a> · <a href="<?= $ruta_base ?>clase5/index.php">Formularios (Clase 5)</a></p>
 <?php if ($mostrar_config): ?>
     <p id="reloj" class="reloj-tiempo"></p>
 
@@ -27,6 +28,6 @@ $mostrar_config = $mostrar_config ?? false;
 <?php endif; ?>
   </footer>
 
-  <script src="js/RIFT-OVERDRIVE.js"></script>
+  <script src="<?= $ruta_base ?>js/RIFT-OVERDRIVE.js"></script>
 </body>
 </html>
