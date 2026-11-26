@@ -7,7 +7,9 @@
  * antes de incluir el header: $nav_simple = true;
  * y opcionalmente $nav_boton_texto / $nav_boton_link para el botón de la derecha.
  */
-$pagina_actual = basename($_SERVER['PHP_SELF']);
+// Si la página ya definió $pagina_actual (ej.: las de clase5/), se respeta; si no, se detecta sola.
+$pagina_actual = $pagina_actual ?? basename($_SERVER['PHP_SELF']);
+$ruta_base = $ruta_base ?? '';
 $nav_simple = $nav_simple ?? false;
 
 // Devuelve ' class="active"' si el link corresponde a la página actual
@@ -18,33 +20,33 @@ function clase_activa(string $archivo): string
 }
 ?>
   <header class="header">
-    <a href="index.php">
-      <img src="img/logo-header.png" alt="Logo de <?= htmlspecialchars(APP_NAME) ?>" class="logo" width="70" height="42">
+    <a href="<?= $ruta_base ?>index.php">
+      <img src="<?= $ruta_base ?>img/logo-header.png" alt="Logo de <?= htmlspecialchars(APP_NAME) ?>" class="logo" width="70" height="42">
     </a>
 <?php if ($nav_simple): ?>
-    <a href="<?= $nav_boton_link ?? 'index.php' ?>" class="boton boton-header"><?= $nav_boton_texto ?? '‹ Volver al inicio' ?></a>
+    <a href="<?= $nav_boton_link ?? $ruta_base . 'index.php' ?>" class="boton boton-header"><?= $nav_boton_texto ?? '‹ Volver al inicio' ?></a>
   </header>
 <?php else: ?>
     <nav class="nav">
-      <a href="index.php"<?= clase_activa('index.php') ?>>Inicio</a>
-      <a href="index.php#tutorial">Tutorial</a>
-      <a href="index.php#musica">Música</a>
-      <a href="index.php#curso">Curso</a>
-      <a href="blog.php"<?= clase_activa('blog.php') ?>>Blog</a>
-      <a href="galeria.php"<?= clase_activa('galeria.php') ?>>Galería</a>
-      <a href="quienes-somos.php"<?= clase_activa('quienes-somos.php') ?>>Quiénes somos</a>
-      <a href="preguntas.php"<?= clase_activa('preguntas.php') ?>>FAQ</a>
-      <a href="contacto.php"<?= clase_activa('contacto.php') ?>>Contacto</a>
+      <a href="<?= $ruta_base ?>index.php"<?= clase_activa('index.php') ?>>Inicio</a>
+      <a href="<?= $ruta_base ?>index.php#tutorial">Tutorial</a>
+      <a href="<?= $ruta_base ?>index.php#musica">Música</a>
+      <a href="<?= $ruta_base ?>index.php#curso">Curso</a>
+      <a href="<?= $ruta_base ?>blog.php"<?= clase_activa('blog.php') ?>>Blog</a>
+      <a href="<?= $ruta_base ?>galeria.php"<?= clase_activa('galeria.php') ?>>Galería</a>
+      <a href="<?= $ruta_base ?>quienes-somos.php"<?= clase_activa('quienes-somos.php') ?>>Quiénes somos</a>
+      <a href="<?= $ruta_base ?>preguntas.php"<?= clase_activa('preguntas.php') ?>>FAQ</a>
+      <a href="<?= $ruta_base ?>contacto.php"<?= clase_activa('contacto.php') ?>>Contacto</a>
 
       <div class="dropdown">
-        <a href="descarga.php" id="btn-descargar"<?= clase_activa('descarga.php') ?> aria-expanded="false" aria-controls="menu-descargar">Descargar ▾</a>
+        <a href="<?= $ruta_base ?>descarga.php" id="btn-descargar"<?= clase_activa('descarga.php') ?> aria-expanded="false" aria-controls="menu-descargar">Descargar ▾</a>
         <div class="dropdown-menu" id="menu-descargar">
-          <a href="descargas/rift-overdrive-windows.zip" download>Windows</a>
-          <a href="descargas/rift-overdrive-linux.zip" download>Linux</a>
+          <a href="<?= $ruta_base ?>descargas/rift-overdrive-windows.zip" download>Windows</a>
+          <a href="<?= $ruta_base ?>descargas/rift-overdrive-linux.zip" download>Linux</a>
         </div>
       </div>
     </nav>
 
-    <a href="login.php" class="boton boton-header<?= $pagina_actual === 'login.php' ? ' active' : '' ?>">⬇ Iniciar sesión</a>
+    <a href="<?= $ruta_base ?>login.php" class="boton boton-header<?= $pagina_actual === 'login.php' ? ' active' : '' ?>">⬇ Iniciar sesión</a>
   </header>
 <?php endif; ?>
