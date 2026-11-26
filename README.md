@@ -187,7 +187,9 @@ Campos: texto de búsqueda (`q`) y categoría (`categoria`). Ejemplo de URL: `bu
 
 **4. Buscador GET con resultados (se ve la URL con los parámetros):**
 
-![GET resultados](img/clase5-get-resultados.jpeg)
+![GET resultados](img/clase5-get-resultados-1.jpeg)
+
+![GET resultados](img/clase5-get-resultados-2.jpeg)
 
 **5. Buscador GET con error de validación:**
 
