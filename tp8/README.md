@@ -81,8 +81,9 @@ logout.php ──► $_SESSION vacío + cookie borrada + session_destroy() ─�
 
 **Registro con errores de validación**
 
-![Registro con errores](../img/tp8-registro-errores.jpeg)
+![Registro con errores](../img/tp8-registro-errores-1.jpeg)
 
+![Registro con errores](../img/tp8-registro-errores-2.jpeg)
 **Login con credenciales incorrectas**
 
 ![Login incorrecto](../img/tp8-login-error.jpeg)
