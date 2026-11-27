@@ -1,0 +1,77 @@
+/* =====================================================================
+   tp8.css — Estilos del TP8 (login, registro, panel y menú de sesión)
+   Complementa a RIFT-OVERDRIVE.css; usa las mismas variables de color.
+   ===================================================================== */
+
+/* Los campos de contraseña toman el mismo estilo que el resto de los campos */
+.campo input[type="password"] {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--texto);
+  font-family: inherit;
+}
+
+.campo input[type="password"]:focus {
+  outline: none;
+  border-color: var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+}
+
+.campo.con-error input[type="password"],
+.campo.con-error input[type="date"] {
+  border-color: #ff4d6d;
+}
+
+/* El formulario de registro tiene más campos: caja un poco más ancha */
+.login-caja.registro-caja {
+  max-width: 520px;
+}
+
+/* Botones de sesión en el encabezado (usuario + cerrar sesión) */
+.nav-sesion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Datos del panel de usuario */
+.panel-datos {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 24px;
+  max-width: 600px;
+  margin: 25px 0;
+  padding: 20px 24px;
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+.panel-datos dt {
+  font-weight: bold;
+  color: var(--texto-suave);
+}
+
+.panel-datos dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Etiqueta del rol */
+.badge-rol {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 1px solid var(--neon);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-admin {
+  background-color: rgba(168, 85, 247, 0.2);
+}
