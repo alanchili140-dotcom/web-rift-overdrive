@@ -12,6 +12,8 @@ $pagina_actual = $pagina_actual ?? basename($_SERVER['PHP_SELF']);
 $ruta_base = $ruta_base ?? '';
 $nav_simple = $nav_simple ?? false;
 
+require_once __DIR__ . '/../config/sesion.php';   // TP8: usuario_logueado() y h()
+
 // Devuelve ' class="active"' si el link corresponde a la página actual
 function clase_activa(string $archivo): string
 {
@@ -47,6 +49,13 @@ function clase_activa(string $archivo): string
       </div>
     </nav>
 
+<?php if (usuario_logueado()): ?>
+    <div class="nav-sesion">
+      <a href="<?= $ruta_base ?>panel.php" class="boton boton-header<?= $pagina_actual === 'panel.php' ? ' active' : '' ?>">👤 <?= h($_SESSION['usuario_nombre']) ?></a>
+      <a href="<?= $ruta_base ?>logout.php" class="boton boton-header">Cerrar sesión</a>
+    </div>
+<?php else: ?>
     <a href="<?= $ruta_base ?>login.php" class="boton boton-header<?= $pagina_actual === 'login.php' ? ' active' : '' ?>">⬇ Iniciar sesión</a>
+<?php endif; ?>
   </header>
 <?php endif; ?>

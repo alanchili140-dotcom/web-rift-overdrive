@@ -11,7 +11,7 @@ $ruta_base = $ruta_base ?? '';
 
   <footer class="footer">
     <p>&copy; <?= date('Y') ?> <?= htmlspecialchars(APP_NAME) ?> — Proyecto escolar, Escuela Técnica.</p>
-    <p><a href="<?= $ruta_base ?>terminos.php">Términos y Condiciones</a> · <a href="<?= $ruta_base ?>tp5/index.php">Formularios (TP5)</a> · <a href="<?= $ruta_base ?>admin/index.php">Administración</a></p>
+    <p><a href="<?= $ruta_base ?>terminos.php">Términos y Condiciones</a> · <a href="<?= $ruta_base ?>tp5/index.php">Formularios (TP5)</a><?php if (($_SESSION['rol'] ?? '') === 'admin'): ?> · <a href="<?= $ruta_base ?>admin/index.php">Administración</a><?php endif; ?></p>
 <?php if ($mostrar_config): ?>
     <p id="reloj" class="reloj-tiempo"></p>
 

@@ -9,6 +9,8 @@
  *                                        está en una subcarpeta (ej.: '../' en clase5/)
  */
 require_once __DIR__ . '/../config/env.php';
+require_once __DIR__ . '/../config/sesion.php';
+iniciar_sesion_segura();   // TP8: la sesión se inicia antes de cualquier salida HTML
 
 $titulo_pagina = $titulo_pagina ?? APP_NAME;
 $descripcion_pagina = $descripcion_pagina ?? '';
@@ -24,6 +26,7 @@ $ruta_base = $ruta_base ?? '';
   <meta name="description" content="<?= htmlspecialchars($descripcion_pagina) ?>">
 <?php endif; ?>
   <link rel="stylesheet" href="<?= $ruta_base ?>css/RIFT-OVERDRIVE.css">
+  <link rel="stylesheet" href="<?= $ruta_base ?>css/tp8.css">
 </head>
 <body>
 

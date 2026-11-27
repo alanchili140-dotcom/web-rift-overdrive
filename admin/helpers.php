@@ -2,6 +2,11 @@
 /**
  * admin/helpers.php — Funciones compartidas del módulo CRUD
  */
+// TP8: todo el módulo CRUD queda protegido. Hay que estar logueado Y tener rol "admin".
+// (crear.php, editar.php, eliminar.php e index.php incluyen este archivo antes de cualquier salida.)
+require_once __DIR__ . '/../includes/auth_guard.php';
+verificarRol('admin');
+
 require_once __DIR__ . '/../config/conexion.php';
 
 /** Escapa una salida para HTML (protección XSS). */
