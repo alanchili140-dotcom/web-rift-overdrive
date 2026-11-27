@@ -39,7 +39,9 @@ Módulo de administración del **blog** de RIFT OVERDRIVE. Trabaja sobre la tabl
 
 **Alta de una publicación (Create)**
 
-![Formulario crear](../img/tp7-crear.jpeg)
+![Formulario crear](../img/tp7-crear-1.jpeg)
+
+![Formulario crear](../img/tp7-crear-2.jpeg)
 
 **Edición (Update)**
 
